@@ -1,18 +1,18 @@
 {
   "name": "roadmap-json-bmpr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "roadmap",
     "balsamiq",
     "bmpr"
   ],
-  "homepage": "https://github.com/Sina-Salahshour/bmpr-roadmap-json",
+  "homepage": "https://github.com/Sina-Salahshour/roadmap-json-bmpr",
   "bugs": {
-    "url": "https://github.com/Sina-Salahshour/bmpr-roadmap-json/issues"
+    "url": "https://github.com/Sina-Salahshour/roadmap-json-bmpr/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sina-Salahshour/bmpr-roadmap-json.git"
+    "url": "git+https://github.com/Sina-Salahshour/roadmap-json-bmpr.git"
   },
   "exports": {
     ".": {
