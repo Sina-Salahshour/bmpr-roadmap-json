@@ -1,6 +1,6 @@
 {
   "name": "bmpr-roadmap-json",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "keywords": [
     "roadmap",
     "balsamiq",
@@ -32,7 +32,7 @@
   "scripts": {
     "build": "rimraf dist && npm run build:types && npm run build:js",
     "build:js": "rollup -c",
-    "build:types": "tsc",
+    "build:types": "tsc --emitDeclarationOnly",
     "prepare": "husky install"
   },
   "lint-staged": {
