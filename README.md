@@ -3,16 +3,16 @@
 usage:
 
 ```ts
-import { roadmapJsonToBmpr } from "bmpr-roadmap-json";
+import { roadmapJsonToBmpr } from 'roadmap-json-bmpr'
 
 async function main() {
   await roadmapJsonToBmpr({
-    jsonPath: "file.json",
-    bmprPath: "pathToSave.bmpr",
-  });
+    jsonPath: 'file.json',
+    bmprPath: 'pathToSave.bmpr',
+  })
   await bmprToRoadmapJson({
-    bmprPath: "file.bmpr",
-    jsonPath: "pathToSave.json",
-  });
+    bmprPath: 'file.bmpr',
+    jsonPath: 'pathToSave.json',
+  })
 }
 ```
