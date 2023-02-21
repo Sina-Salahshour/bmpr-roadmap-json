@@ -65,7 +65,7 @@ async function fillInfoValues(
     ArchiveAttributes: JSON.stringify({
       creationDate,
       name: jsonFile.mockup.attributes.name,
-    } satisfies IParsedInfoArchiveAttributes),
+    } satisfies IParsedInfoArchiveAttributes).replace("'", "''"),
     ArchiveFormat: balsamiqDefaults.info.archiveFormat,
     ArchiveRevision: '0',
     ArchiveRevisionUUID: randomUUID(),
@@ -88,7 +88,7 @@ async function fillBranchesValues(
     ATTRIBUTES: JSON.stringify({
       ...balsamiqDefaults.branches,
       creationDate,
-    } satisfies IParsedBranchAttributes),
+    } satisfies IParsedBranchAttributes).replace("'", "''"),
     ID: jsonFile.mockup.branchID,
   } satisfies IBranch
   await db.run(`
@@ -108,7 +108,7 @@ async function fillThumbnailsValues(
       branchID: jsonFile.mockup.branchID,
       image: balsamiqDefaults.thumbnails.thumbnailImage,
       resourceID: jsonFile.mockup.resourceID,
-    } satisfies IParsedThumbnailAttributes),
+    } satisfies IParsedThumbnailAttributes).replace("'", "''"),
   } satisfies IThumbnail
   await db.run(`
   INSERT INTO THUMBNAILS values
@@ -127,13 +127,13 @@ async function fillResourcesValues(
     thumbnailId,
     creationDate,
     name: jsonFile.mockup.attributes.name,
-  } satisfies IParsedResourceAttributes)
+  } satisfies IParsedResourceAttributes).replace("'", "''")
   const data = JSON.stringify({
     mockup: jsonFile.mockup,
-  } satisfies IParsedData)
+  } satisfies IParsedData).replace("'", "''")
   await db.run(`
   INSERT INTO RESOURCES values
-  ('${resourceID}', '${branchID}', '${attributes}', '${data}')
+  ('${resourceID}', '${branchID}', '${attributes}', '${data}');
   `)
 }
 
