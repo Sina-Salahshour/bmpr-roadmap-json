@@ -18,8 +18,8 @@ program
         roadmapJsonToBmpr({
           jsonPath: match,
           bmprPath: join(dest, `${parsedPath.name}.bmpr`),
-        }).catch(() => {
-          console.error(`[${match} failed]`)
+        }).catch((err) => {
+          console.error(`[${match} failed]`, err)
         })
       })
     })
@@ -36,8 +36,8 @@ program
         roadmapJsonToBmpr({
           jsonPath: match,
           bmprPath: join(dest, `${parsedPath.name}.json`),
-        }).catch(() => {
-          console.error(`[${match} failed]`)
+        }).catch((err) => {
+          console.error(`[${match} failed]`, err)
         })
       })
     })
