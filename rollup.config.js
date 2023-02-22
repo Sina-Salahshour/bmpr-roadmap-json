@@ -2,7 +2,9 @@ import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import { join } from 'path'
 import { terser } from 'rollup-plugin-terser'
+import bin from 'rollup-plugin-bin'
 import pkg from './package.json'
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
@@ -35,6 +37,20 @@ export default [
       },
     ],
     plugins,
+  },
+  {
+    input: 'src/cli/index.ts',
+    external: [
+      Object.keys(pkg.dependencies || {}),
+      Object.keys(pkg.peerDependencies || {}),
+    ].flat(),
+    output: [
+      {
+        file: join('bin', 'index.js'),
+        format: 'cjs',
+      },
+    ],
+    plugins: [...plugins, bin()],
   },
   {
     input: 'src/index.ts',
