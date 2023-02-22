@@ -1,6 +1,6 @@
 {
   "name": "roadmap-json-bmpr",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": [
     "roadmap",
     "balsamiq",
@@ -36,7 +36,7 @@
     "prepare": "husky install"
   },
   "bin": {
-    "bmpr-roadmap-json": "./bin/index.js"
+    "roadmap-json-bmpr": "./bin/index.js"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
