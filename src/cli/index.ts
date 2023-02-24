@@ -1,6 +1,7 @@
 import { Command } from 'commander'
 import { glob } from 'glob'
 import path, { join } from 'path'
+import { bmprToRoadmapJson } from '../utils/bmpr-to-roadmap-json.util'
 import { roadmapJsonToBmpr } from '../utils/roadmap-json-to-bmpr.util'
 const program = new Command()
 
@@ -33,7 +34,7 @@ program
     glob(join(source, '*.bmpr'), (_err, matches) => {
       matches.map((match) => {
         const parsedPath = path.parse(match)
-        roadmapJsonToBmpr({
+        bmprToRoadmapJson({
           jsonPath: match,
           bmprPath: join(dest, `${parsedPath.name}.json`),
         }).catch((err) => {
