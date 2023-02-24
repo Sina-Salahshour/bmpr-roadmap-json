@@ -35,8 +35,8 @@ program
       matches.map((match) => {
         const parsedPath = path.parse(match)
         bmprToRoadmapJson({
-          jsonPath: match,
-          bmprPath: join(dest, `${parsedPath.name}.json`),
+          bmprPath: match,
+          jsonPath: join(dest, `${parsedPath.name}.json`),
         }).catch((err) => {
           console.error(`[${match} failed]`, err)
         })
